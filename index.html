@@ -85,15 +85,20 @@
     var map = new google.maps.Map(document.getElementById('map'), {
       'zoom': 10,
       'center': mapCenter,
-      navigationControl: true,
-		  scaleControl: true, // Scale on the bottom lef. Unable to just specify metric units, though the Flash GMaps API allows it, weird
+      streetViewControl: false,
+      navigationControl: false,
 		  mapTypeControlOptions: {
         style: google.maps.NavigationControlStyle.SMALL,
         position: google.maps.ControlPosition.TOP_LEFT,
         mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'incendios']
       },
-		  mapTypeControl: false // hide the map styles controls
+		  mapTypeControl: false, // hide the map styles controls
       //'mapTypeId': google.maps.MapTypeId.ROADMAP // Default mapTypeID
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.TOP_LEFT
+      },
+      zoomControl: true,
+      scaleControl: true // Scale on the bottom lef. Unable to just specify metric units, though the Flash GMaps API allows it, weird
     });
 
 		// Custom style
